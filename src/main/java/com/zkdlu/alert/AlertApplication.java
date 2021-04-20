@@ -12,6 +12,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.client.RestTemplate;
 
+import java.math.BigDecimal;
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.Map;
 
 @Slf4j
@@ -30,6 +33,5 @@ public class AlertApplication implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-
 	}
 }

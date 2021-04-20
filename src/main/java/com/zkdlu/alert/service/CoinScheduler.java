@@ -22,7 +22,7 @@ public class CoinScheduler {
 
     @Scheduled(cron = "0 0/1 * * * ?")
     public void getCoin() {
-        var coins = restTemplate.getForObject("https://api.upbit.com/v1/candles/minutes/1?market=KRW-BTC&count=1",
+        var coins = restTemplate.getForObject("https://api.upbit.com/v1/candles/minutes/1?market=KRW-ONT&count=1",
                 Coin[].class);
 
         if (coins.length > 0) {
