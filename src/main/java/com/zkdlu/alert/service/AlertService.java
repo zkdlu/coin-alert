@@ -45,9 +45,9 @@ public class AlertService {
 
     private List<TextObject> getCoinFields(Coin coin) {
         return Arrays.asList(
-                getField("고가", coin.getHighPrice() + ""),
-                getField("저가", coin.getLowPrice() + ""),
-                getField("현재 가격", coin.getTradePrice() + "")
+                getField("고가", numberFormat.format(coin.getHighPrice())),
+                getField("저가", numberFormat.format(coin.getLowPrice())),
+                getField("현재 가격", numberFormat.format(coin.getTradePrice()))
         );
     }
 
