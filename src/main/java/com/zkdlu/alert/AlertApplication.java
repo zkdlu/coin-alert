@@ -1,5 +1,6 @@
 package com.zkdlu.alert;
 
+import com.zkdlu.alert.service.AlertService;
 import com.zkdlu.alert.service.CoinScheduler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +18,10 @@ public class AlertApplication implements ApplicationRunner {
 	}
 
 	@Autowired
-	CoinScheduler coin;
+	AlertService alertService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		log.info("{}, {}", coin.getAccessKey(), coin.getSecretKey());
+		alertService.alert("테스트");
 	}
 }
