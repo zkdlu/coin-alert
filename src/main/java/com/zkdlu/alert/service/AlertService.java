@@ -26,7 +26,7 @@ public class AlertService {
         List<LayoutBlock> layoutBlocks = Blocks.asBlocks(
                 getHeader("코인 정보가 도착했어요. " + coin.getMarket()),
                 Blocks.divider(),
-                getSection("현재 가격: " + (BigDecimal)coin.getTradePrice())
+                getSection("현재 가격: " + BigDecimal.valueOf(coin.getTradePrice()).toPlainString())
         );
 
         slackBot.send(layoutBlocks);
