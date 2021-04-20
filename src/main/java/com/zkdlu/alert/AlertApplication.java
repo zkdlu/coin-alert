@@ -12,10 +12,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Map;
+
 @Slf4j
 @EnableScheduling
 @SpringBootApplication
-public class AlertApplication {
+public class AlertApplication implements ApplicationRunner {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AlertApplication.class, args);
@@ -24,5 +26,10 @@ public class AlertApplication {
 	@Bean
 	public RestTemplate restTemplate() {
 		return new RestTemplate();
+	}
+
+	@Override
+	public void run(ApplicationArguments args) throws Exception {
+
 	}
 }

@@ -11,6 +11,7 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -25,7 +26,7 @@ public class AlertService {
         List<LayoutBlock> layoutBlocks = Blocks.asBlocks(
                 getHeader("코인 정보가 도착했어요. " + coin.getMarket()),
                 Blocks.divider(),
-                getSection("현재 가격: " + coin.getTradePrice())
+                getSection("현재 가격: " + (BigDecimal)coin.getTradePrice())
         );
 
         slackBot.send(layoutBlocks);
